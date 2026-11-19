@@ -24,12 +24,51 @@ To adopt the crew in an existing project, copy the nine TOML files from `.codex/
 
 ## Verify the installation
 
-From the project root, run the profile check with PowerShell and Python 3.11+ (or Python 3.10 with tomli installed).
+After running project setup, open a terminal in the project root. Choose your operating system below to check that all nine profiles and both instruction files are present and nonempty.
 
-    pwsh -NoProfile -File tools/Test-CrewProfiles.ps1
+### macOS (Terminal)
 
-Expect nine valid profiles. To exercise the bundled shipment example, run:
+```sh
+(
+  set -e
+  for name in brook chopper franky jinbe nami robin sanji usopp zoro; do
+    test -s ".codex/agents/$name.toml" || { echo "Missing profile: $name"; exit 1; }
+  done
+  test -s AGENTS.md && test -s skills/chopper-bug-hunt/SKILL.md || { echo "Missing crew instructions or bug-hunt skill"; exit 1; }
+  echo "Found all nine profiles, crew instructions, and bug-hunt skill."
+)
+```
 
-    python -B -m unittest discover -s exercises -p "test_shipment*.py" -v
+### Windows (PowerShell)
+
+```powershell
+$files = @('AGENTS.md', 'skills/chopper-bug-hunt/SKILL.md')
+$files += 'brook','chopper','franky','jinbe','nami','robin','sanji','usopp','zoro' | ForEach-Object { ".codex/agents/$_.toml" }
+foreach ($file in $files) {
+    if (!(Test-Path -LiteralPath $file -PathType Leaf) -or (Get-Item -LiteralPath $file).Length -eq 0) { throw "Missing or empty: $file" }
+}
+'Found all nine profiles, crew instructions, and bug-hunt skill.'
+```
+
+### Linux (terminal)
+
+```sh
+(
+  set -e
+  for name in brook chopper franky jinbe nami robin sanji usopp zoro; do
+    test -s ".codex/agents/$name.toml" || { echo "Missing profile: $name"; exit 1; }
+  done
+  test -s AGENTS.md && test -s skills/chopper-bug-hunt/SKILL.md || { echo "Missing crew instructions or bug-hunt skill"; exit 1; }
+  echo "Found all nine profiles, crew instructions, and bug-hunt skill."
+)
+```
+
+A successful check prints `Found all nine profiles, crew instructions, and bug-hunt skill.` To check that Codex can launch a specialist, start a fresh chat in the project and ask: “Luffy, send Robin to read AGENTS.md and report one finding.”
+
+### Optional template tests
+
+From a clone or extracted ZIP, run the shipment tests with Python 3.10 or later. Use `python3` on macOS or Linux and `python` on Windows.
+
+    python3 -B -m unittest discover -s exercises -p "test_shipment*.py" -v
 
 The concurrency examples use a local filesystem with hard-link support. See [the exercises](exercises/README.md) for more project briefs and the trial scorer.
