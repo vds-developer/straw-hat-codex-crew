@@ -1,0 +1,20 @@
+{
+  "name": "straw-hat-crew",
+  "interface": {
+    "displayName": "Straw Hat Crew"
+  },
+  "plugins": [
+    {
+      "name": "straw-hat-crew",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

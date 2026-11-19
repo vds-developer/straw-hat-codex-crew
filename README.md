@@ -4,13 +4,13 @@ A project template for coordinating nine engineering specialists. Luffy takes a 
 
 ## One-line install for macOS
 
-Run this in Terminal from the folder where you keep your projects. It uses Git to install the complete crew in a new project folder and enters that folder. Git stops if the destination already contains files.
+With the Codex CLI installed, run this in Terminal:
 
 ```sh
-git clone https://github.com/vds-developer/straw-hat-codex-crew.git straw-hat-codex-crew && cd straw-hat-codex-crew
+codex plugin marketplace add vds-developer/straw-hat-codex-crew && codex plugin add straw-hat-crew@straw-hat-crew
 ```
 
-If macOS prompts you to install its command-line developer tools, finish that installation and run the command again. Open the new folder in Codex and start a chat.
+Open your project in Codex and invoke the **setup-straw-hat-crew** skill once per project. It installs the nine specialist profiles and Luffy’s routing instructions while preserving customized files. Start a new chat in that project to use the crew.
 
 ## Start a project
 
