@@ -2,6 +2,16 @@
 
 A project template for coordinating nine engineering specialists. Luffy takes a goal, assigns scoped work, and checks what the crew delivers. See [the crew roster](AGENTS.md) for each specialist's responsibilities.
 
+## One-line install for macOS
+
+Run this in Terminal from the folder where you keep your projects. It uses Git to install the complete crew in a new project folder and enters that folder. Git stops if the destination already contains files.
+
+```sh
+git clone https://github.com/vds-developer/straw-hat-codex-crew.git straw-hat-codex-crew && cd straw-hat-codex-crew
+```
+
+If macOS prompts you to install its command-line developer tools, finish that installation and run the command again. Open the new folder in Codex and start a chat.
+
 ## Start a project
 
 Download and extract this repository, or clone it with Git. Open the extracted project root in Codex and start a new chat. Use a Codex installation with custom agent support. The profiles specify model names and reasoning settings; if your account uses different models, adjust those fields in the TOML files before launching the crew.
