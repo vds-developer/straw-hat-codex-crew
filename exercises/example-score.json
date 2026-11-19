@@ -1,0 +1,13 @@
+{
+  "checks": [
+    {
+      "name": "The example command prints the expected item count",
+      "passed": true,
+      "notes": "Example observation: the output contained all three sample items."
+    },
+    {
+      "name": "The example command rejects a missing input file",
+      "passed": true
+    }
+  ]
+}
