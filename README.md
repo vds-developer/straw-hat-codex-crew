@@ -12,6 +12,10 @@ codex plugin marketplace add vds-developer/straw-hat-codex-crew && codex plugin 
 
 Open your project in Codex and invoke the **setup-straw-hat-crew** skill once per project. It installs the nine specialist profiles and Luffy’s routing instructions while preserving customized files. Start a new chat in that project to use the crew.
 
+## Log Pose
+
+Ask “Luffy, run Log Pose on this task.” The crew reviews what happened and proposes evidence-backed edits to the skills involved. You choose which changes to apply.
+
 ## Forge
 
 Crew skills first check `$CODEX_HOME/scripts` (default `~/.codex/scripts`) for a suitable CLI. When one is unavailable, the skill continues normally. Forge turns repeatable scripted work into reusable commands there. For example, ask “Forge the manifest reconciliation step into a CLI and use it on this shipment.” Rerun crew setup in existing projects to add Forge.
@@ -24,7 +28,7 @@ Try this prompt:
 
 > Luffy, send Robin to inspect the shipment CLI and Usopp to verify its retry behavior. Have each return one finding without changing files. Tell me which specialists actually ran.
 
-To adopt the crew in an existing project, copy the nine TOML files from `.codex/agents/` into the same relative directory and merge the routing instructions from `AGENTS.md` into your project instructions. Copy the skills/forge and skills/chopper-bug-hunt directories into the same relative location for proactive bug hunts. Review existing files with matching names before copying. The examples and validator are optional.
+To adopt the crew in an existing project, copy the nine TOML files from `.codex/agents/` into the same relative directory and merge the routing instructions from `AGENTS.md` into your project instructions. Copy the skills/forge, skills/log-pose, and skills/chopper-bug-hunt directories into the same relative location for proactive bug hunts. Review existing files with matching names before copying. The examples and validator are optional.
 
 ## Verify the installation
 
