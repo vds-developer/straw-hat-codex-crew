@@ -1,6 +1,6 @@
 {
   "name": "straw-hat-crew",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Set up nine engineering specialists in a Codex project.",
   "skills": "./skills/"
 }
